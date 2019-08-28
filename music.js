@@ -2,7 +2,6 @@ $( document ).ready(function() {
     console.log( "ready!" );
 
 
-<<<<<<< HEAD
        
           // 2. This code loads the IFrame Player API code asynchronously.
           var tag = document.createElement('script');
@@ -45,10 +44,6 @@ $( document ).ready(function() {
             player.stopVideo();
           }
      
-=======
-
-
->>>>>>> cb506554d79a82fa3aa2a7758e7363b4644d477e
 
 // incorporate ajax and api keys for youtube and wikipedia
 
