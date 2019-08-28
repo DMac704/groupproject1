@@ -1,3 +1,52 @@
+<<<<<<< HEAD
+ /* background image is a jukebox */
+
+ 
+ 
+ * {
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  .search input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 100%;
+    background: #f1f1f1;
+    text-align: center;
+    align-content: center;
+  }
+  
+  /* Style the submit button */
+  .search {
+    float: left;
+    width: 100%;
+    padding: 5px;
+    background: green;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer; 
+  }
+
+  #search {
+      margin: 5px;
+      margin: auto;
+  }
+
+  .card {
+      align-items: center;
+      vertical-align: middle;
+  }
+
+  
+
+  
+=======
 body {
     /* background image is a jukebox */
 }
+>>>>>>> cb506554d79a82fa3aa2a7758e7363b4644d477e
