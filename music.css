@@ -1,9 +1,14 @@
-<<<<<<< HEAD
- /* background image is a jukebox */
+body {
+  background-color: gray;
+}
 
- 
- 
- * {
+.container {
+  background-color: white;
+  padding: 35px;
+  margin: auto;
+}
+
+* {
     box-sizing: border-box;
   }
   
@@ -24,7 +29,7 @@
     float: left;
     width: 100%;
     padding: 5px;
-    background: green;
+    background: gray; 
     color: white;
     font-size: 17px;
     border: 1px solid grey;
@@ -40,13 +45,14 @@
   .card {
       align-items: center;
       vertical-align: middle;
+      padding: 270px;
+      background-color: lightgray
+  }
+
+  #searchButton {
+    align-content: center;
   }
 
   
 
   
-=======
-body {
-    /* background image is a jukebox */
-}
->>>>>>> cb506554d79a82fa3aa2a7758e7363b4644d477e
