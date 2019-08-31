@@ -1,8 +1,14 @@
- /* background image is a jukebox */
+body {
+  background-color: gray;
+}
 
- 
- 
- * {
+.container {
+  background-color: white;
+  padding: 35px;
+  margin: auto;
+}
+
+* {
     box-sizing: border-box;
   }
   
@@ -23,7 +29,7 @@
     float: left;
     width: 100%;
     padding: 5px;
-    background: green;
+    background: gray; 
     color: white;
     font-size: 17px;
     border: 1px solid grey;
@@ -39,6 +45,12 @@
   .card {
       align-items: center;
       vertical-align: middle;
+      padding: 270px;
+      background-color: lightgray
+  }
+
+  #searchButton {
+    align-content: center;
   }
 
   
