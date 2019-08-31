@@ -3,7 +3,7 @@ $( document ).ready(function() {
    
 
     var youtube = "";
-    var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyBNDJ16U8jnXbI42TF0XgmGbnyJSALbVOE";
+    var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=trilogy";
 
     $.ajax({
       url: queryURL,
