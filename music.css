@@ -14,12 +14,14 @@
 
 body {
   background-color: gray;
+  
 }
 
 .container {
-  background-color: white;
+  background-color: blueviolet;
   padding: 35px;
   margin: auto;
+  opacity: 0.92;
 }
 
 * {
@@ -60,11 +62,14 @@ body {
       align-items: center;
       vertical-align: middle;
       padding: 270px;
-      background-color: lightgray
-  }
+      background-color: lightgray;
+      
+  }  
 
   #searchButton {
     align-content: center;
+    padding: 5px;
+    margin: auto;
   }
 
   h2 {
