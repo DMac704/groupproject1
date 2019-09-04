@@ -1,14 +1,28 @@
-$( document ).ready(function() {
-    console.log( "ready!" );
-   
 
-    var youtube = "";
-    var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=trilogy";
+$(document).ready(function () {
+  console.log("ready!");
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response) {
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA1XMeuMaCSqDBkHqBWJaX8AcxGQs6jW7c",
+    authDomain: "groupproject-5db84.firebaseapp.com",
+    databaseURL: "https://groupproject-5db84.firebaseio.com",
+    projectId: "groupproject-5db84",
+    storageBucket: "",
+    messagingSenderId: "897998664226",
+    appId: "1:897998664226:web:60ba90cac571315f"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  
+    var youtube = $(".youtube").html(player);
+
+  var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyA1XMeuMaCSqDBkHqBWJaX8AcxGQs6jW7c";
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function (response) {
 
 
   // 2. This code loads the IFrame Player API code asynchronously.
@@ -52,11 +66,16 @@ $( document ).ready(function() {
     player.stopVideo();
   }
 
-       
 
 
 
-
-      });
+    
+    $("#submit").click(function () {
+      $(player).show();
 
     });
+
+  });
+
+    });
+
