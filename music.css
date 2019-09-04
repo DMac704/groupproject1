@@ -12,3 +12,68 @@
     
   }
 
+body {
+  background-color: gray;
+}
+
+.container {
+  background-color: white;
+  padding: 35px;
+  margin: auto;
+}
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style the search field */
+  .search input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 100%;
+    background: #f1f1f1;
+    text-align: center;
+    align-content: center;
+  }
+  
+  /* Style the submit button */
+  .search {
+    float: left;
+    width: 100%;
+    padding: 5px;
+    background: gray; 
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer; 
+  }
+
+  #search {
+      margin: 5px;
+      margin: auto;
+  }
+
+  .card {
+      align-items: center;
+      vertical-align: middle;
+      padding: 270px;
+      background-color: lightgray
+  }
+
+  #searchButton {
+    align-content: center;
+  }
+
+  h2 {
+    font-size: 30px;
+    font-weight: bolder;
+  }
+
+.youtube {
+  display: none;
+}
+
+  
