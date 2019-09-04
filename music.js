@@ -17,10 +17,12 @@ $(document).ready(function () {
   
     var youtube = $(".youtube").html(player);
 
-  var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyA1XMeuMaCSqDBkHqBWJaX8AcxGQs6jW7c";
+  var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyAUBKBi3a8_o51_qE-yiRbj_RexsYRQElA";
+ 
+  // when does each ajax call get fired
 
   $.ajax({
-    url: queryURL,
+    url: queryURL
     method: "GET"
   }).then(function (response) {
 
