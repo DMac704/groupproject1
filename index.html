@@ -5,10 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
     <link rel="stylesheet" href="reset.css"> 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="music.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -16,21 +17,23 @@
 </head>
 
 <body>
-    <h1>**This is the final submission file, create your own branch to work in**</h1>
-
-<!-- search button -->
-
-test 123
-
-
-<!-- youtube player -->
-
-
-
-
-
-<!-- wiki facts thatll come for each song (put in a <div>) -->
-
+    <div class="container">
+                    <div class="row align-middle">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <h2>Type a song title or artist to begin!</h2>
+                                <div class="card-body">
+                                    <div class="search">
+                                        <input type="text" class="form-control input-sm" maxlength="64" id="searchButton" placeholder="Search" />
+                                        <button type="submit" class="btn btn-primary btn-sm" id="submit">Search</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            <div class="youtube"></div>
+    </div>
 
 
     <scipt src="music.js"></scipt>
