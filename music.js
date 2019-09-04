@@ -22,7 +22,7 @@ $(document).ready(function () {
   // when does each ajax call get fired
 
   $.ajax({
-    url: queryURL
+    url: queryURL,
     method: "GET"
   }).then(function (response) {
 
