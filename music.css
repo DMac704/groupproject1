@@ -51,6 +51,8 @@ body {
 
   #searchButton {
     align-content: center;
+    padding: 5px;
+    margin: auto;
   }
 
   h2 {
