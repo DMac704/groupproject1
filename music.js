@@ -15,6 +15,7 @@ $(document).ready(function () {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+
   var youtube = $(".youtube").html(player);
 
   var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyAUBKBi3a8_o51_qE-yiRbj_RexsYRQElA";
@@ -34,10 +35,7 @@ $(document).ready(function () {
 
 
     // 2. This code loads the IFrame Player API code asynchronously.
-    var newScript = $("<script>");
-    console.log(newScript);
-    newScript.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = $("<script>");[0];
+
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     // 3. This function creates an <iframe> (and YouTube player)
@@ -55,7 +53,7 @@ $(document).ready(function () {
       });
     }
 
-    console.log(player);
+
     // 4. The API will call this function when the video player is ready.
     function onPlayerReady(event) {
       event.target.playVideo();
@@ -75,6 +73,7 @@ $(document).ready(function () {
       player.stopVideo();
     }
 
+
     database.ref().push();
   });
 
@@ -82,7 +81,6 @@ $(document).ready(function () {
 
   var youtube = $(".youtube").html(player);
 
-  var events = "https://bandsintown.com" + events + "appId=369ee177bec3664bb630131b48ca0627";
 
 
   $.ajax({
@@ -90,7 +88,7 @@ $(document).ready(function () {
     method: "GET /artists/{artistname}",
   }).then(function (response) {
 
-    
+
 });
 
 });
