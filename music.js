@@ -15,20 +15,22 @@ $(document).ready(function () {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
-  $(".btn btn-primary btn-sm").on("click", function () {
+  $(".btn").on("click", function () {
     console.log("element was clicked!!");
     $(player).show();
     $(".btn btn-primary btn-sm").hide();
     return true;
   });
 
+// get the player variable to work 
+
+//STEP TWO
+
   var youtube = $(".youtube").html(player);
 
   var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyAUBKBi3a8_o51_qE-yiRbj_RexsYRQElA";
 
   console.log(queryURL);
-  // when does each ajax call get fired
-
 
   $.ajax({
     url: queryURL,
