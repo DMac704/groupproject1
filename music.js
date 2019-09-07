@@ -15,6 +15,7 @@ $(document).ready(function () {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+  var player;
 
   $(".btn").on("click", function () {
     console.log("element was clicked!!");
@@ -45,7 +46,7 @@ $(document).ready(function () {
 
     // 3. This function creates an <iframe> (and YouTube player)
     //    after the API code downloads.
-    var player;
+    
     function onYouTubeIframeAPIReady() {
       player = new YT.Player('player', {
         height: '390',
@@ -85,17 +86,17 @@ $(document).ready(function () {
   // bands in town api --
 
   
+  var bands = $(".events").html();
+ // bands.show();
 
-
-  // var events = "https://bandsintown.com" + bands + "appId=369ee177bec3664bb630131b48ca0627";
+  var events = "https://bandsintown.com" + bands + "appId=369ee177bec3664bb630131b48ca0627";
 
   $.ajax({
     url: events,
     method: "GET /artists/{artistname}?app_id=369ee177bec3664bb630131b48ca0627",
   }).then(function (response) {
 
-    var bands = $(".events").html();
-    bands.show();
+
 
 });
 
