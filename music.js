@@ -15,9 +15,18 @@ $(document).ready(function () {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
+
   var youtube = $(".youtube").html(player);
 
-  var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyA1XMeuMaCSqDBkHqBWJaX8AcxGQs6jW7c";
+  var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyAUBKBi3a8_o51_qE-yiRbj_RexsYRQElA";
+
+  console.log(queryURL);
+  // when does each ajax call get fired
+
+  $("#submit").click(function () {
+    $(player).show();
+    $("#submit").hide();
+  });
 
   $.ajax({
     url: queryURL,
@@ -26,10 +35,7 @@ $(document).ready(function () {
 
 
     // 2. This code loads the IFrame Player API code asynchronously.
-    var tag = document.createElement('script');
 
-    tag.src = "https://www.youtube.com/iframe_api";
-    var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
     // 3. This function creates an <iframe> (and YouTube player)
@@ -46,6 +52,7 @@ $(document).ready(function () {
         }
       });
     }
+
 
     // 4. The API will call this function when the video player is ready.
     function onPlayerReady(event) {
@@ -67,15 +74,21 @@ $(document).ready(function () {
     }
 
 
-
-
-
-    $("#submit").click(function () {
-      $(player).show();
-
-    });
-
+    database.ref().push();
   });
+
+  // bands in town api --
+
+  var youtube = $(".youtube").html(player);
+
+
+
+  $.ajax({
+    url: events,
+    method: "GET /artists/{artistname}",
+  }).then(function (response) {
+
 
 });
 
+});
