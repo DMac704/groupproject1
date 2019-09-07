@@ -16,17 +16,22 @@ $(document).ready(function () {
   firebase.initializeApp(firebaseConfig);
 
 
+  $(".btn").on("click", function () {
+    console.log("element was clicked!!");
+    $(player).show();
+    $(".btn btn-primary btn-sm").hide();
+    return true;
+  });
+
+// get the player variable to work 
+
+//STEP TWO
+  
   var youtube = $(".youtube").html(player);
 
   var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyAUBKBi3a8_o51_qE-yiRbj_RexsYRQElA";
 
   console.log(queryURL);
-  // when does each ajax call get fired
-
-  $("#submit").click(function () {
-    $(player).show();
-    $("#submit").hide();
-  });
 
   $.ajax({
     url: queryURL,
@@ -79,16 +84,21 @@ $(document).ready(function () {
 
   // bands in town api --
 
-  var youtube = $(".youtube").html(player);
+  
 
 
+  // var events = "https://bandsintown.com" + bands + "appId=369ee177bec3664bb630131b48ca0627";
 
   $.ajax({
     url: events,
-    method: "GET /artists/{artistname}",
+    method: "GET /artists/{artistname}?app_id=369ee177bec3664bb630131b48ca0627",
   }).then(function (response) {
 
+    var bands = $(".events").html();
+    bands.show();
 
 });
 
+
 });
+
