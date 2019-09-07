@@ -19,11 +19,12 @@ $(document).ready(function () {
 
   var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyAUBKBi3a8_o51_qE-yiRbj_RexsYRQElA";
 
+  console.log(queryURL);
   // when does each ajax call get fired
 
   $("#submit").click(function () {
     $(player).show();
-
+    $("#submit").hide();
   });
 
   $.ajax({
@@ -34,7 +35,7 @@ $(document).ready(function () {
 
     // 2. This code loads the IFrame Player API code asynchronously.
     var newScript = $("<script>");
-
+    console.log(newScript);
     newScript.src = "https://www.youtube.com/iframe_api";
     var firstScriptTag = $("<script>");[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
@@ -54,6 +55,7 @@ $(document).ready(function () {
       });
     }
 
+    console.log(player);
     // 4. The API will call this function when the video player is ready.
     function onPlayerReady(event) {
       event.target.playVideo();
@@ -73,7 +75,22 @@ $(document).ready(function () {
       player.stopVideo();
     }
 
+    database.ref().push();
   });
 
+  // bands in town api --
+
+  var youtube = $(".youtube").html(player);
+
+  var events = "https://bandsintown.com" + events + "appId=369ee177bec3664bb630131b48ca0627";
+
+
+  $.ajax({
+    url: events,
+    method: "GET /artists/{artistname}",
+  }).then(function (response) {
+
+    
 });
 
+});
