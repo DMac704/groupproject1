@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="reset.css">
     <script src="https://www.gstatic.com/firebasejs/6.5.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="music.css">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.10.2/js/all.js" data-auto-replace-svg="nest"></script>
     <title>Music Project</title>
 </head>
 
@@ -23,28 +22,32 @@
 
     <div class="container">
 
-            <form>
-                    <div class="row align-middle">
-                        <div class="col-md-12">
-                            <div class="card">
-                                <h2>Type a song to begin!</h2>
-                                <div class="card-body">
-                                    <div class="search">
-                                        <input type="text" class="form-control input-sm" maxlength="64" id="searchBox" placeholder="Search">
-                                        <button class="btn btn-primary btn-sm">Play<i class="fa fa-play" aria-hidden="true"></i></button>
-                                    </div>
-                                </div>
+        <form>
+            <div class="row align-middle">
+                <div class="col-md-12">
+                    <div class="card">
+                        <h2>Type a song to begin!</h2>
+                        <div class="card-body">
+                            <div class="search">
+                                <input type="text" class="form-control input-sm" maxlength="64" id="searchBox"
+                                    placeholder="Search">
+                                <button class="btn btn-primary btn-sm">Play <i class="fa fa-play"
+                                        aria-hidden="true"></i></button>
                             </div>
                         </div>
                     </div>
-                    </div>
-            
-            <div class="events"></div>
-        </div>
+                </div>
+            </div>
+    </div>
 
+    <div class="events"></div>
+    </div>
 
-    
+    <!-- Spotify API SDK -->
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="music.js"></script>
+
 </body>
-<script src="music.js"></script>
+
 
 </html>

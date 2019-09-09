@@ -15,48 +15,48 @@ $(document).ready(function () {
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
 
- 
+
   $(".btn").on("click", function () {
+    event.preventDefault();
     console.log("element was clicked!!");
-    $(".btn").hide();
-    $(player).show(); 
+
     return true;
   });
 
-// spotify api
+  // spotify api
+  // access token (for ajax call)
 
-<script src="https://sdk.scdn.co/spotify-player.js"></script>
 
-window.onSpotifyWebPlaybackSDKReady = () => {
-  const userAccessToken = "[access token]";
-  const webPlayback = new Spotify.Player({
-    name: "Spotify Web Playback SDK",
-    getOAuthToken: callback => { callback(token)}
+  var queryUrl = "https://api.spotify.com"
+  var token = "BQBUd5zrqDTTZvzsNxFO15dSpFmZwd41cOZgox08uBpvhEKmz8ecV9sF3PP_A8fd7mjGAaPqrpz_wMaM3ckQtqQEtHqAA2-fuaRBFSwgEdqqC97SYnhu6gEszO-vGFgO7ysH4h7nzsawFimOjaFoAxNinpVxR-tgFidJsvYIqjFqMM4XJeKITA"
+
+
+  $(".btn").click(function () {
+    $.ajax({
+      url: "https://cors-anywhere.herokuapp.com/ " + queryUrl + token,
+      method: "GET",
+      success: function () {
+
+      }
+    });
   });
-  webPlayback.connect();
-};
-
-
-
-
-
 
   // bands in town for events //
 
-//   var bands = $(".events").html();
-//   // 
-//   bands.show();
+  // var bands = $(".events").html();
 
-//   var events = "https://bandsintown.com" + bands + "appId=369ee177bec3664bb630131b48ca0627";
-
-//   $.ajax({
-//     url: events,
-//     method: "GET /artists/{artistname}?app_id=369ee177bec3664bb630131b48ca0627",
-//   }).then(function (response) {
+  var appID = "appId=369ee177bec3664bb630131b48ca0627"
+  var queryUrl2 = "https://bandsintown.com" + appID;
 
 
+  $.ajax({
+    url: "https://cors-anywhere.herokuapp.com/ " + queryUrl2,
+    method: "GET /artists/{artistname}?" + appID,
+  }).then(function () {
 
-// });
+
+
+  });
 
 
 });
@@ -84,70 +84,4 @@ window.onSpotifyWebPlaybackSDKReady = () => {
 
 
 
-// this is extra code for now //
 
-// var player;
-
-// // get the player variable to work 
-
-// //STEP TWO
-  
-//   var youtube = $(".youtube").html(player);
-
-//   var queryURL = "https://cors-anywhere.herokuapp.com/https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyAUBKBi3a8_o51_qE-yiRbj_RexsYRQElA"
-
-//   console.log(queryURL);
-//   console.log(youtube);
-
-//   $.ajax({
-//     url: queryURL,
-//     method: "GET"
-//   }).then(function (response) {
-
-
-//     // 2. This code loads the IFrame Player API code asynchronously.
-
-//     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-//     // 3. This function creates an <iframe> (and YouTube player)
-//     //    after the API code downloads.
-    
-//     function onYouTubeIframeAPIReady() {
-//       player = new YT.Player('player', {
-//         height: '390',
-//         width: '640',
-//         videoId: 'M7lc1UVf-VE',
-//         events: {
-//           'onReady': onPlayerReady,
-//           'onStateChange': onPlayerStateChange
-//         }
-//       });
-//     }
-
-
-//     // 4. The API will call this function when the video player is ready.
-//     function onPlayerReady(event) {
-//       event.target.playVideo();
-//     }
-
-//     // 5. The API calls this function when the player's state changes.
-//     //    The function indicates that when playing a video (state=1),
-//     //    the player should play for six seconds and then stop.
-//     var done = false;
-//     function onPlayerStateChange(event) {
-//       if (event.data == YT.PlayerState.PLAYING && !done) {
-//         setTimeout(stopVideo, 6000);
-//         done = true;
-//       }
-//     }
-//     function stopVideo() {
-//       player.stopVideo();
-//     }
-
-
-//     database.ref().push();
-//   });
-
-//   // bands in town api --
-
-  
