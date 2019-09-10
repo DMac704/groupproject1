@@ -1,5 +1,5 @@
-
 $(document).ready(function () {
+
     console.log("ready!");
 
     // spotify api
@@ -60,3 +60,4 @@ $(document).ready(function () {
     });
 
 });
+
