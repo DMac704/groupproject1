@@ -127,10 +127,10 @@ $(document).ready(function () {
             headers: {
                 'Authorization': 'Bearer ' + _token
             },
-            data: {
-                'context_uri': 'spotify:track:2iCcqggir1VUNIHfKDYKX9',
-                'position_ms': 5000
-            },
+            // data: {
+            //     'context_uri': 'spotify:track:2iCcqggir1VUNIHfKDYKX9',
+            //     'position_ms': 5000
+            // },
             success: (data)=>{
                 console.log(data);
                play(data.tracks.items[0].id);
