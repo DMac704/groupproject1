@@ -5,7 +5,8 @@ $(document).ready(function () {
     // spotify api
     // access token (for ajax call)
 
-    // var client_id = '090007e3600d4e579a27e68795279b6d'; // Your client id
+    var clientId = '090007e3600d4e579a27e68795279b6d'; // Your client id
+    
     // var client_secret = '7d841303f464421cb70cb9524f045734'; // Your secret
 
     // window.onSpotifyWebPlaybackSDKReady = () => {
@@ -19,21 +20,21 @@ $(document).ready(function () {
     //     });
     // }
  
-        // Get the hash of the url
-        // const hash = window.location.hash
-        // .substring(1)
-        // .split('&')
-        // .reduce(function (initial, item) {
-        // if (item) {
-        //     var parts = item.split('=');
-        //     initial[parts[0]] = decodeURIComponent(parts[1]);
-        // }
-        // return initial;
-        // }, {});
-        // window.location.hash = '';
+    //     // Get the hash of the url
+    //     const hash = window.location.hash
+    //     .substring(1)
+    //     .split('&')
+    //     .reduce(function (initial, item) {
+    //     if (item) {
+    //         var parts = item.split('=');
+    //         initial[parts[0]] = decodeURIComponent(parts[1]);
+    //     }
+    //     return initial;
+    //     }, {});
+    //     window.location.hash = '';
     
         // Set token
-        let _token = 'BQBmpdNLnxxthNZz9_tAJUxfUY8CKZdeDObJmD46JM_xUb-wXMSmmAX8wAfD-LuyzP_QtbxtDyT3wrKpvD3yVFiC1vPI4YIMZ5uJEnsij_nV_9TP6CUDBnEaMhweCQ4-IWpfzpG3qJYrZT-ZjxlipXMjPFwlZD1RkIC5fwgUfMJ4tVY0nUOxgQ';
+        let _token = 'BQAB3arRjoeeUQ45d1La2xs-zZkN0MybJcDEHDD6TZbrPsySKnJ6e6qtTRF-y92SLig9PM0s2JBRGzvvsbvwp8hy6HKK3TwsMfCkTrNx9w3XsJvIRzxiTKky4wAMeChK-pLyDZzws2le6AgufxfxYEOy7L18ahCv-bDJoBmKs2GFu85HNUlwTw';
 
         
 
@@ -42,7 +43,7 @@ $(document).ready(function () {
         const authEndpoint = 'https://accounts.spotify.com/authorize';
     
         // Replace with your app's client ID, redirect URI and desired scopes
-        const clientId = '04e15c5176114e1fb2ebc700280292ee';
+         clientId = '04e15c5176114e1fb2ebc700280292ee';
         const redirectUri = 'music-project-login://callback';
         const scopes = [
             'streaming',
@@ -74,8 +75,10 @@ $(document).ready(function () {
             // Playback status updates
             player.on('player_state_changed', state => {
                 console.log(state)
-                // $('#current-track').attr('src', state.track_window.current_track.album.images[0].url);
-                // $('#current-track-name').text(state.track_window.current_track.name);
+                var currentTrack = $('#current-track').text('src', state.track_window.current_track.album.images[0].url);
+                currentTrack.html();
+                var currentTrackName = $('#current-track-name').text(state.track_window.current_track.name);
+                currentTrackName.html();
             });
 
           
@@ -112,10 +115,11 @@ $(document).ready(function () {
         event.preventDefault();
         console.log("button is clicked");
         
+        // $("<audio>").append('<source>' + [data.tracks.item[0].id] + '</source>'); 
         $(".jumbotron").show();
         var searchValue = $("#searchBox").val();
 
-        var _token = "BQBmpdNLnxxthNZz9_tAJUxfUY8CKZdeDObJmD46JM_xUb-wXMSmmAX8wAfD-LuyzP_QtbxtDyT3wrKpvD3yVFiC1vPI4YIMZ5uJEnsij_nV_9TP6CUDBnEaMhweCQ4-IWpfzpG3qJYrZT-ZjxlipXMjPFwlZD1RkIC5fwgUfMJ4tVY0nUOxgQ";
+        var _token = "BQAB3arRjoeeUQ45d1La2xs-zZkN0MybJcDEHDD6TZbrPsySKnJ6e6qtTRF-y92SLig9PM0s2JBRGzvvsbvwp8hy6HKK3TwsMfCkTrNx9w3XsJvIRzxiTKky4wAMeChK-pLyDZzws2le6AgufxfxYEOy7L18ahCv-bDJoBmKs2GFu85HNUlwTw";
 
         $.ajax({
             type: "GET",
@@ -123,16 +127,17 @@ $(document).ready(function () {
             headers: {
                 'Authorization': 'Bearer ' + _token
             },
-            // data: {
-            //     'context_uri': 'spotify:track:2iCcqggir1VUNIHfKDYKX9',
-            //     'position_ms': 5000
-            // }
+            data: {
+                'context_uri': 'spotify:track:2iCcqggir1VUNIHfKDYKX9',
+                'position_ms': 5000
+            },
             success: (data)=>{
-                 console.log(data);
-                play(data.tracks.items[0].external_ids);
-                
-            }
+                console.log(data);
+               play(data.tracks.items[0].id);
+               
+           }
         })
+        
     });
  
 
