@@ -140,7 +140,7 @@ $(document).ready(function () {
     var bands = $("#bandsInTown").html();
 
     var appID = "appId=369ee177bec3664bb630131b48ca0627"
-    var queryUrl2 = "https://bandsintown.com/" + appID;
+    var queryUrl2 = "rest.bandsintown.com" + appID;
 
     var artistName = $("#searchBox").html();
 
