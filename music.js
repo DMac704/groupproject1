@@ -1,7 +1,6 @@
 
 $(document).ready(function () {
   console.log("ready!");
-
   // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyA1XMeuMaCSqDBkHqBWJaX8AcxGQs6jW7c",
@@ -14,68 +13,67 @@ $(document).ready(function () {
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
+  var player;
+  $(".btn").on("click", function () {
+    console.log("element was clicked!!");
+    $(".btn").hide();
+    $(player).show(); 
+    return true;
+  });
+// get the player variable to work 
+//STEP TWO
   
-    var youtube = $(".youtube").html(player);
-
-  var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyA1XMeuMaCSqDBkHqBWJaX8AcxGQs6jW7c";
-
+  var youtube = $(".youtube").html(player);
+  var queryURL = "https://www.youtube.com/iframe_api" + youtube + "&apikey=AIzaSyAUBKBi3a8_o51_qE-yiRbj_RexsYRQElA";
+  console.log(queryURL);
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function (response) {
-
-
-  // 2. This code loads the IFrame Player API code asynchronously.
-  var tag = document.createElement('script');
-
-  tag.src = "https://www.youtube.com/iframe_api";
-  var firstScriptTag = document.getElementsByTagName('script')[0];
-  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-  // 3. This function creates an <iframe> (and YouTube player)
-  //    after the API code downloads.
-  var player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      height: '390',
-      width: '640',
-      videoId: 'M7lc1UVf-VE',
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': onPlayerStateChange
-      }
-    });
-  }
-
-  // 4. The API will call this function when the video player is ready.
-  function onPlayerReady(event) {
-    event.target.playVideo();
-  }
-
-  // 5. The API calls this function when the player's state changes.
-  //    The function indicates that when playing a video (state=1),
-  //    the player should play for six seconds and then stop.
-  var done = false;
-  function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
-      setTimeout(stopVideo, 6000);
-      done = true;
-    }
-  }
-  function stopVideo() {
-    player.stopVideo();
-  }
-
-
-
-
+    // 2. This code loads the IFrame Player API code asynchronously.
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+    // 3. This function creates an <iframe> (and YouTube player)
+    //    after the API code downloads.
     
-    $("#submit").click(function () {
-      $(player).show();
-
-    });
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('player', {
+        height: '390',
+        width: '640',
+        videoId: 'M7lc1UVf-VE',
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+    // 4. The API will call this function when the video player is ready.
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+    // 5. The API calls this function when the player's state changes.
+    //    The function indicates that when playing a video (state=1),
+    //    the player should play for six seconds and then stop.
+    var done = false;
+    function onPlayerStateChange(event) {
+      if (event.data == YT.PlayerState.PLAYING && !done) {
+        setTimeout(stopVideo, 6000);
+        done = true;
+      }
+    }
+    function stopVideo() {
+      player.stopVideo();
+    }
+    database.ref().push();
+  });
+  // bands in town api --
+  
+  var bands = $(".events").html();
+  // bands.show();
+  var events = "https://bandsintown.com" + bands + "appId=369ee177bec3664bb630131b48ca0627";
+  $.ajax({
+    url: events,
+    method: "GET /artists/{artistname}?app_id=369ee177bec3664bb630131b48ca0627",
+  }).then(function (response) {
 
   });
-
-    });
-
+});
