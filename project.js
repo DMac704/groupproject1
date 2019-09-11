@@ -33,9 +33,9 @@ $(document).ready(function () {
         // window.location.hash = '';
     
         // Set token
-        let _token = 'BQBoL2AbtdEAfnoA5m9TCe8qOrQ-tOKZleojU7bO2-N0Dkg1Wnzk4ndBuoCtAIcs828Ld3PoPVKnbPXuPWAOm_URLbR4rEgl7Xdf_z6vayg2Jdu4aZwxG5TJ0MewuQwwXD1S8xh__y8Y9cbblwZxmc4LoZ8qYIfPfQmJGRfMIEf3V4Xq9RyuTA';
+        let _token = 'BQBmpdNLnxxthNZz9_tAJUxfUY8CKZdeDObJmD46JM_xUb-wXMSmmAX8wAfD-LuyzP_QtbxtDyT3wrKpvD3yVFiC1vPI4YIMZ5uJEnsij_nV_9TP6CUDBnEaMhweCQ4-IWpfzpG3qJYrZT-ZjxlipXMjPFwlZD1RkIC5fwgUfMJ4tVY0nUOxgQ';
 
-        var device_id = "";
+        
 
 
     
@@ -43,7 +43,7 @@ $(document).ready(function () {
     
         // Replace with your app's client ID, redirect URI and desired scopes
         const clientId = '04e15c5176114e1fb2ebc700280292ee';
-        const redirectUri = 'http://localhost:4040';
+        const redirectUri = 'music-project-login://callback';
         const scopes = [
             'streaming',
             'user-read-birthdate',
@@ -77,7 +77,8 @@ $(document).ready(function () {
                 // $('#current-track').attr('src', state.track_window.current_track.album.images[0].url);
                 // $('#current-track-name').text(state.track_window.current_track.name);
             });
-    
+
+          
             // Ready
             player.on('ready', data => {
                 console.log('Ready with Device ID', data.device_id);
@@ -85,14 +86,14 @@ $(document).ready(function () {
                 // Play a track using our new device ID
                 device_id = data.device_id;
 
-                // play(data.device_id);
+                 play(data.device_id);
 
             });
     
             // Connect to the player!
             player.connect();
         }
-    
+        var device_id = "";
         // Play a specified track on the Web Playback SDK's device ID
         function play(device_id) {
         $.ajax({
@@ -114,7 +115,7 @@ $(document).ready(function () {
         $(".jumbotron").show();
         var searchValue = $("#searchBox").val();
 
-        var _token = "BQBoL2AbtdEAfnoA5m9TCe8qOrQ-tOKZleojU7bO2-N0Dkg1Wnzk4ndBuoCtAIcs828Ld3PoPVKnbPXuPWAOm_URLbR4rEgl7Xdf_z6vayg2Jdu4aZwxG5TJ0MewuQwwXD1S8xh__y8Y9cbblwZxmc4LoZ8qYIfPfQmJGRfMIEf3V4Xq9RyuTA";
+        var _token = "BQBmpdNLnxxthNZz9_tAJUxfUY8CKZdeDObJmD46JM_xUb-wXMSmmAX8wAfD-LuyzP_QtbxtDyT3wrKpvD3yVFiC1vPI4YIMZ5uJEnsij_nV_9TP6CUDBnEaMhweCQ4-IWpfzpG3qJYrZT-ZjxlipXMjPFwlZD1RkIC5fwgUfMJ4tVY0nUOxgQ";
 
         $.ajax({
             type: "GET",
@@ -128,7 +129,7 @@ $(document).ready(function () {
             // }
             success: (data)=>{
                  console.log(data);
-                play(data.tracks.items[0].id);
+                play(data.tracks.items[0].external_ids);
                 
             }
         })
@@ -140,7 +141,7 @@ $(document).ready(function () {
     var bands = $("#bandsInTown").html();
 
     var appID = "appId=369ee177bec3664bb630131b48ca0627"
-    var queryUrl2 = "https://bandsintown.com/" + appID;
+    var queryUrl2 = "rest.bandsintown.com" + appID;
 
     var artistName = $("#searchBox").html();
 
@@ -149,6 +150,7 @@ $(document).ready(function () {
         method: "GET /artists/" + artistName + "/events",
     }).then(function () {
 
+        bands.show();
 
 
 
