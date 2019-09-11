@@ -33,7 +33,7 @@ $(document).ready(function () {
         // window.location.hash = '';
     
         // Set token
-        let _token = 'BQDyQ-RCg6QzawIcJs7h0I5qataF7oBVYs80nsIIrpKD3sFjVJcwbTBX3sl5ATgcwSPlUhVJE7-FnQQr6kCkLtDV7dcJTYDxIBsQS0qOvK-qeR4n0mRHsrz3YcSFDzvvMkTJWxIJozTWJINlHozyJZlFaFBnVCRB2MZH54sz8MCd2N3BfJWfEA';
+        let _token = 'BQBoL2AbtdEAfnoA5m9TCe8qOrQ-tOKZleojU7bO2-N0Dkg1Wnzk4ndBuoCtAIcs828Ld3PoPVKnbPXuPWAOm_URLbR4rEgl7Xdf_z6vayg2Jdu4aZwxG5TJ0MewuQwwXD1S8xh__y8Y9cbblwZxmc4LoZ8qYIfPfQmJGRfMIEf3V4Xq9RyuTA';
 
         var device_id = "";
 
@@ -45,10 +45,10 @@ $(document).ready(function () {
         const clientId = '04e15c5176114e1fb2ebc700280292ee';
         const redirectUri = 'http://localhost:4040';
         const scopes = [
-            // 'streaming',
-            // 'user-read-birthdate',
-            // 'user-read-private',
-            // 'user-modify-playback-state'
+            'streaming',
+            'user-read-birthdate',
+            'user-read-private',
+            'user-modify-playback-state',
             'user-read-playback-state'
         ];
     
@@ -94,10 +94,10 @@ $(document).ready(function () {
         }
     
         // Play a specified track on the Web Playback SDK's device ID
-        function play(track) {
+        function play(device_id) {
         $.ajax({
-        url: "https://api.spotify.com/v1/me/player/play?device_id=" + device_id,
-        type: "PUT",
+        url: "https://api.spotify.com/v1/play/device_id?" + device_id,
+        type: "curl -X PUT https://api.spotify.com/v1/me/player/play?",
         data: '{"uris": ["spotify:track:2YpeDb67231RjR0MgVLzsG]}',
         beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + _token );},
         success: function(data) { 
@@ -114,7 +114,7 @@ $(document).ready(function () {
         $(".jumbotron").show();
         var searchValue = $("#searchBox").val();
 
-        var token = "BQAijHyFMOA1uensNTaFjPvtRD9hRBLL6gsHGxuCyYcQYB6zxJcuDqw48g4QUoBCfOAO6frdRJK2Y3k14uCvFQsafXffZzjkD9s1YM9Rna7pil50x5_Y-kg0MNCAgVZgn5nrER26JSVWWRMh61ni2TZ5PpuotLLFMiHX29zsn1R6aa2XfY9DGA";
+        var _token = "BQBoL2AbtdEAfnoA5m9TCe8qOrQ-tOKZleojU7bO2-N0Dkg1Wnzk4ndBuoCtAIcs828Ld3PoPVKnbPXuPWAOm_URLbR4rEgl7Xdf_z6vayg2Jdu4aZwxG5TJ0MewuQwwXD1S8xh__y8Y9cbblwZxmc4LoZ8qYIfPfQmJGRfMIEf3V4Xq9RyuTA";
 
         $.ajax({
             type: "GET",
@@ -142,12 +142,14 @@ $(document).ready(function () {
     var appID = "appId=369ee177bec3664bb630131b48ca0627"
     var queryUrl2 = "https://bandsintown.com/" + appID;
 
-    var artistName = $("#searchbox").text();
+    var artistName = $("#searchBox").html();
 
     $.ajax({
         url: "https://cors-anywhere.herokuapp.com/ " + queryUrl2,
         method: "GET /artists/" + artistName + "/events",
     }).then(function () {
+
+
 
 
     });
