@@ -33,7 +33,7 @@ $(document).ready(function () {
         // window.location.hash = '';
     
         // Set token
-        let _token = 'BQCXYo3z2rSGXbcuCFTrFd-xrHK2Nc069COVzjJ4Gat6RkW85nVJYy1JFV2Im-jmz2Ksoxon4e7HoJh3juSVrbFQzN_1O66Jjxs4muUfCKwwz96BAjcFfSSaVZX9mDIqXk4nxeIJGVoQNUCtT2axGaqh9yd6uuaqmcwc2cQPdBkmf_tomCzPUw';
+        let _token = 'BQDyQ-RCg6QzawIcJs7h0I5qataF7oBVYs80nsIIrpKD3sFjVJcwbTBX3sl5ATgcwSPlUhVJE7-FnQQr6kCkLtDV7dcJTYDxIBsQS0qOvK-qeR4n0mRHsrz3YcSFDzvvMkTJWxIJozTWJINlHozyJZlFaFBnVCRB2MZH54sz8MCd2N3BfJWfEA';
 
         var device_id = "";
 
